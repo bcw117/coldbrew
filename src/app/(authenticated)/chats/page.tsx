@@ -13,9 +13,9 @@ import { toast } from "sonner";
 
 // Status options
 const STATUS_OPTIONS = [
-  { value: "Sent", label: "Sent", color: "bg-blue-100 text-blue-800" },
+  { value: "Sent", label: "Sent ✈️", color: "bg-blue-100 text-blue-800" },
   { value: "Ghosted", label: "Ghosted 👻", color: "bg-gray-100 text-gray-800" },
-  { value: "Brewed", label: "Brewed", color: "bg-green-100 text-green-800" },
+  { value: "Brewed", label: "Brewed ☕", color: "bg-green-100 text-green-800" },
   {
     value: "Follow up",
     label: "Follow up",

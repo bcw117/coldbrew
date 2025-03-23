@@ -9,11 +9,8 @@ export default function HomePage() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
       <h1 className="flex justify-center text-3xl font-bold mb-8">
-        Job Recommendation Tool
+        Brew Up Your Recommendations
       </h1>
-
-      <RecommendationForm onLoadingChange={setIsGenerating} />
-
       {isGenerating && (
         <div className="mb-6 flex flex-col items-center justify-center">
           <div className="flex items-center justify-center space-x-2 text-blue-600">
@@ -47,6 +44,7 @@ export default function HomePage() {
           </p>
         </div>
       )}
+      <RecommendationForm onLoadingChange={setIsGenerating} />
     </div>
   );
 }

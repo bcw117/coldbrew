@@ -75,7 +75,7 @@ export default function LandingPage() {
                     <div className="rounded-lg bg-white p-4 shadow-lg w-[220px] sm:w-[260px] lg:w-[300px]">
                       <div className="space-y-4">
                         <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                          <Users className="h-6 w-6 text-blue-600" />
+                          <Coffee className="h-6 w-6 text-blue-600" />
                         </div>
                         <h3 className="text-xl font-bold">
                           Connect with professionals
