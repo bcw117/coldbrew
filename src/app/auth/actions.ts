@@ -38,7 +38,7 @@ export async function signup(formData: FormData) {
       data: {
         first_name: formData.get("first_name") as string,
         last_name: formData.get("last_name") as string,
-        role: formData.get("role") as string,
+        role: "intern",
         linkedin_url: formData.get("linkedin_url") as string,
       },
     },

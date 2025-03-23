@@ -39,18 +39,40 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (
-    !user &&
-    !request.nextUrl.pathname.startsWith("/login") &&
-    !request.nextUrl.pathname.startsWith("/auth")
-  ) {
-    // no user, potentially respond by redirecting the user to the login page
+  // Public routes that don't require authentication
+  const publicRoutes = [
+    "/",
+    "/auth/signin",
+    "/auth/signup",
+    "/signin",
+    "/signup",
+  ];
+  const isPublicRoute = publicRoutes.some(
+    (route) =>
+      request.nextUrl.pathname === route ||
+      request.nextUrl.pathname.startsWith("/auth/")
+  );
+
+  // Static assets paths
+  const isStaticAsset = request.nextUrl.pathname.match(
+    /^\/((_next|favicon\.ico|.*\.(svg|png|jpg|jpeg|gif|webp))$)/
+  );
+
+  // Redirect unauthenticated users trying to access protected routes to signin
+  if (!user && !isPublicRoute && !isStaticAsset) {
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = "/auth/signin";
     return NextResponse.redirect(url);
   }
 
-  // IMPORTANT: You *must* return the supabaseResponse object as it is.
+  // Redirect authenticated users trying to access auth pages to the home page
+  if (user && isPublicRoute) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/dashboard";
+    return NextResponse.redirect(url);
+  }
+
+  // IMPORTANT: You *must* return the supabaseResponse object as is.
   // If you're creating a new response object with NextResponse.next() make sure to:
   // 1. Pass the request in it, like so:
   //    const myNewResponse = NextResponse.next({ request })

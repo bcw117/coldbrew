@@ -1,66 +1,105 @@
 import { login } from "../actions";
 import Link from "next/link";
+import { Coffee } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Image from "next/image";
 export default function LoginPage() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <div className="w-full max-w-md space-y-8 rounded-lg bg-white p-6 shadow-lg">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Sign in to your account
-          </h2>
+    <div className="flex min-h-screen flex-col">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto max-w-7xl flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/fullicon.svg"
+                alt="Coldbrew Logo"
+                width={150}
+                height={24}
+              />
+            </Link>
+          </div>
         </div>
-        <form className="mt-8 space-y-6" action={login}>
-          <div className="space-y-4 rounded-md shadow-sm">
-            <div>
-              <label htmlFor="email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="Email address"
-              />
+      </header>
+      <main className="flex-1 flex items-center justify-center">
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 py-12">
+          <div className="mx-auto w-full max-w-md space-y-6">
+            <div className="space-y-2 text-center">
+              <h1 className="text-3xl font-bold tracking-tighter">Sign In</h1>
+              <p className="text-muted-foreground">
+                Enter your credentials to access your account
+              </p>
             </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="Password"
-              />
-            </div>
+            <form className="space-y-4" action={login}>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="m@example.com"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password">Password</Label>
+                  <Link
+                    href="/forgot-password"
+                    className="text-sm text-primary hover:underline"
+                  >
+                    Forgot password?
+                  </Link>
+                </div>
+                <Input id="password" name="password" type="password" required />
+              </div>
+              <Button type="submit" className="w-full">
+                Sign In
+              </Button>
+              <div className="text-center text-sm">
+                Don&apos;t have an account?{" "}
+                <Link
+                  href="/auth/signup"
+                  className="text-primary hover:underline"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            </form>
           </div>
-
-          <div className="flex flex-col space-y-4">
-            <button
-              type="submit"
-              className="group relative flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        </div>
+      </main>
+      <footer className="w-full border-t bg-background py-6 md:py-8">
+        <div className="container mx-auto max-w-7xl flex flex-col items-center justify-between gap-4 md:flex-row px-4 md:px-6">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/fullicon.svg"
+              alt="Coldbrew Logo"
+              width={150}
+              height={24}
+            />
+          </div>
+          <p className="text-center text-sm text-muted-foreground md:text-left">
+            &copy; {new Date().getFullYear()} coldbrew. All rights reserved.
+          </p>
+          <div className="flex gap-4">
+            <Link
+              href="/terms"
+              className="text-sm text-muted-foreground hover:underline"
             >
-              Sign in
-            </button>
-            <div className="text-center text-sm">
-              <span className="text-gray-600">Don't have an account? </span>
-              <Link
-                href="/auth/signup"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                Sign up
-              </Link>
-            </div>
+              Terms
+            </Link>
+            <Link
+              href="/privacy"
+              className="text-sm text-muted-foreground hover:underline"
+            >
+              Privacy
+            </Link>
           </div>
-        </form>
-      </div>
+        </div>
+      </footer>
     </div>
   );
 }

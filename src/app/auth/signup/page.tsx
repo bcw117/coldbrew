@@ -1,110 +1,129 @@
 import { signup } from "../actions";
+import Link from "next/link";
+import { Coffee } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Image from "next/image";
 
 export default function SignUp() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <div className="w-full max-w-md space-y-8 rounded-lg bg-white p-6 shadow-lg">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Create your account
-          </h2>
+    <div className="flex min-h-screen flex-col">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto max-w-7xl flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/fullicon.svg"
+                alt="Coldbrew Logo"
+                width={150}
+                height={24}
+              />
+            </Link>
+          </div>
         </div>
-        <form className="mt-8 space-y-6" action={signup}>
-          <div className="space-y-4 rounded-md shadow-sm">
-            <div>
-              <label htmlFor="first_name" className="sr-only">
-                First Name
-              </label>
-              <input
-                id="first_name"
-                name="first_name"
-                type="text"
-                required
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="First Name"
-              />
+      </header>
+      <main className="flex-1 flex items-center justify-center">
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 py-12">
+          <div className="mx-auto w-full max-w-md space-y-6">
+            <div className="space-y-2 text-center">
+              <h1 className="text-3xl font-bold tracking-tighter">
+                Create an Account
+              </h1>
+              <p className="text-muted-foreground">
+                Enter your information to get started
+              </p>
             </div>
-            <div>
-              <label htmlFor="last_name" className="sr-only">
-                Last Name
-              </label>
-              <input
-                id="last_name"
-                name="last_name"
-                type="text"
-                required
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="Last Name"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="Email address"
-              />
-            </div>
-            <div>
-              <label htmlFor="linkedin_url" className="sr-only">
-                LinkedIn URL
-              </label>
-              <input
-                id="linkedin_url"
-                name="linkedin_url"
-                type="url"
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="LinkedIn URL"
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="new-password"
-                required
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="Password"
-              />
-            </div>
-            <div>
-              <label htmlFor="role" className="sr-only">
-                Role
-              </label>
-              <select
-                id="role"
-                name="role"
-                required
-                className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              >
-                <option value="">Select a role</option>
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-                <option value="manager">Manager</option>
-              </select>
-            </div>
+            <form className="space-y-4" action={signup}>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="first_name">First name</Label>
+                  <Input
+                    id="first_name"
+                    name="first_name"
+                    placeholder="John"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="last_name">Last name</Label>
+                  <Input
+                    id="last_name"
+                    name="last_name"
+                    placeholder="Doe"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="m@example.com"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="linkedin_url">LinkedIn URL</Label>
+                <Input
+                  id="linkedin_url"
+                  name="linkedin_url"
+                  type="url"
+                  placeholder="https://linkedin.com/in/username"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="password">Password</Label>
+                <Input id="password" name="password" type="password" required />
+              </div>
+              <Button type="submit" className="w-full">
+                Create Account
+              </Button>
+              <div className="text-center text-sm">
+                Already have an account?{" "}
+                <Link
+                  href="/auth/signin"
+                  className="text-primary hover:underline"
+                >
+                  Sign In
+                </Link>
+              </div>
+            </form>
           </div>
-
-          <div>
-            <button
-              type="submit"
-              className="group relative flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        </div>
+      </main>
+      <footer className="w-full border-t bg-background py-6 md:py-8">
+        <div className="container mx-auto max-w-7xl flex flex-col items-center justify-between gap-4 md:flex-row px-4 md:px-6">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/fullicon.svg"
+              alt="Coldbrew Logo"
+              width={150}
+              height={24}
+            />
+          </div>
+          <p className="text-center text-sm text-muted-foreground md:text-left">
+            &copy; {new Date().getFullYear()} coldbrew. All rights reserved.
+          </p>
+          <div className="flex gap-4">
+            <Link
+              href="/terms"
+              className="text-sm text-muted-foreground hover:underline"
             >
-              Sign up
-            </button>
+              Terms
+            </Link>
+            <Link
+              href="/privacy"
+              className="text-sm text-muted-foreground hover:underline"
+            >
+              Privacy
+            </Link>
           </div>
-        </form>
-      </div>
+        </div>
+      </footer>
     </div>
   );
 }
