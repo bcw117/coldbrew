@@ -1,0 +1,48 @@
+{
+  "cities": [
+    "Montreal",
+    "Pierrefonds",
+    "Montreal",
+    "Montreal",
+    "Greater Montreal Metropolitan Area"
+  ],
+  "countries": ["Canada", "Canada", "Canada", "Canada", "Canada"],
+  "custom_messages": [
+    "Hi Theo,\n\nAs a fellow software dev, I came across your profile and noticed we both started new roles around the same time - you at Nakisa and me at UBC Launch Pad. I see you worked on operations at GHGSAT, which caught my eye since I'm really interested in the intersection of tech and environmental impact.\n\nWould love to connect and maybe chat about your transition from intern to full-time at Nakisa. Always eager to learn from others in the industry, especially those working in different tech hubs across Canada!\n\nBest,\nBoris",
+    "Hi Samuel! 👋\n\nFellow CS student here from UBC. I noticed you're doing a SWE internship at Nakisa - that's awesome! I'm diving into my first software dev role at UBC Launch Pad and also interning at M2M Tech this summer.\n\nLooks like we're both on similar paths in tech, though you're a bit ahead of me. Would love to hear about your experience at McGill and how you're finding the Montreal tech scene. Always keen to connect with other CS students!\n\nBest,\nBoris",
+    "Hi Jennifer! I noticed you teach scuba diving courses - that's super cool! As a fellow Canadian in tech who's also passionate about continuous learning, I'd love to connect. I'm currently studying CS at UBC and working on an AI-driven educational platform. Your experience in talent acquisition, especially around implementing AI tools at Nakisa, really caught my attention. Would love to learn more about your journey from scuba instructor to tech recruitment and how you see AI transforming HR! Would you be open to a quick chat?",
+    "Hi Marc,\n\nI noticed you're a talent acquisition partner at Nakisa specializing in B2B SaaS recruitment. As a CS student at UBC actively developing SaaS projects (currently working on an AI-powered education platform at UBC Launch Pad), I'd love to connect and learn from your experience in the Montreal tech scene.\n\nI see you have extensive experience in IT recruitment across various industries, and I'm particularly interested in how the tech landscape differs between Montreal and Vancouver.\n\nWould you be open to a quick chat about your journey from marketing to tech recruitment?\n\nBest,\nBoris",
+    "Hi Cristina,\n\nAs a CS student at UBC working on AI + education projects, I noticed your extensive experience in HR and People Ops, particularly your journey from TD to leading People and Culture at tech companies like CloudOps and Nakisa.\n\nI'm currently developing an AI-powered learning platform with UBC Launch Pad and would love to get your perspective on balancing technology adoption with employee wellbeing and engagement - something you seem really passionate about from your profile.\n\nWould you be open to a quick chat about the human side of tech in the workplace?\n\nBest,\nBoris"
+  ],
+  "first_names": ["Theo", "Samuel", "Jennifer A.", "Marc", "Cristina"],
+  "headlines": [
+    "Software Engineer",
+    "Software Developer Intern @ Nakisa | CS @ McGill",
+    "✨ Senior Talent Acquisition Manager @Nakisa | People & Culture Innovator | Leading Talent Strategies for Organizational Excellence 🚀 | We're Hiring!",
+    "Talent Acquisition Partner @ Nakisa |  B2B SaaS | Finance, HR, Real Estate",
+    "VP People and Culture | CHRA"
+  ],
+  "job_titles": [
+    "Software Developer at Nakisa",
+    "Software Engineer Intern at Nakisa",
+    "Senior Talent Acquisition Manager at Nakisa",
+    "Partenaire en acquisition de talents / Talent Acquisition Partner at Nakisa",
+    "VP People and Culture at Nakisa"
+  ],
+  "last_names": ["Forcier", "Ren", "Canty", "Belanger", "Zilic, CHRP  ☁"],
+  "links": [
+    "https://ca.linkedin.com/in/theoforcier",
+    "https://ca.linkedin.com/in/samuel-ren-75489024a",
+    "https://ca.linkedin.com/in/jennifercanty",
+    "https://ca.linkedin.com/in/mrmarcbelanger",
+    "https://ca.linkedin.com/in/cristinazilic"
+  ],
+  "profile_pictures": [
+    "https://storage.googleapis.com/agenthub-public/uid-mCBFkpnUmmY0l6quQESGKcOCyBA2/8okwxJTodcxR2os8YsPy5G%2Flinkedin_profile_picture_KaSPtkcUD47Qa8Fvakaf5d.jpg",
+    "https://storage.googleapis.com/agenthub-public/uid-mCBFkpnUmmY0l6quQESGKcOCyBA2/8okwxJTodcxR2os8YsPy5G%2Flinkedin_profile_picture_C6daNZEsX4XMTY7f7VHSc2.jpg",
+    "",
+    "",
+    ""
+  ],
+  "states": ["Quebec", "Quebec", "Quebec", "Quebec", ""]
+}
