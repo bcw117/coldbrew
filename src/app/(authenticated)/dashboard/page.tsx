@@ -34,11 +34,11 @@ const industryProfessionals = [
   },
   {
     id: 4,
-    name: "Charles Jibblit",
-    role: "Founder @ TechVentures",
-    company: "TechVentures",
-    avatar: "/j4.png",
-    expertise: ["Entrepreneurship", "Startup Funding", "Business Development"],
+    name: "Shreyas Goyal",
+    role: "Building Gumloop (YC W24)",
+    company: "Gumloop",
+    avatar: "/j4.jpeg",
+    expertise: ["Entrepreneurship", "Startup Funding", "AI"],
   },
 ];
 
@@ -114,7 +114,7 @@ export default function DashboardPage() {
     if (connection && connection.profile_picture) {
       return connection.profile_picture;
     }
-    return `https://i.pravatar.cc/150?u=${chat.id}`;
+    return undefined;
   };
 
   // Function to get job title from connection or fallback
